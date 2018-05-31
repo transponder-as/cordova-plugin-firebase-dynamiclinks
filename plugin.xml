@@ -19,6 +19,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <preference name="APP_DOMAIN" />
+    <preference name="APP_DOMAIN2" />
     <preference name="APP_PATH" default ="/" />
 
     <platform name="android">
@@ -37,6 +38,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="http" android:host="$APP_DOMAIN" android:pathPrefix="$APP_PATH"/>
                 <data android:scheme="https" android:host="$APP_DOMAIN" android:pathPrefix="$APP_PATH"/>
+                <data android:scheme="http" android:host="$APP_DOMAIN2" android:pathPrefix="$APP_PATH"/>
+                <data android:scheme="https" android:host="$APP_DOMAIN2" android:pathPrefix="$APP_PATH"/>                       
             </intent-filter>
         </config-file>
 
@@ -73,12 +76,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
             <array>
                     <string>applinks:$APP_DOMAIN</string>
+                    <string>applinks:$APP_DOMAIN2</string>
             </array>
         </config-file>
 
         <config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
             <array>
                     <string>applinks:$APP_DOMAIN</string>
+                    <string>applinks:$APP_DOMAIN2</string>                       
             </array>
         </config-file>
 
